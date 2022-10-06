@@ -1,5 +1,6 @@
 import {
 	TindogBackground,
+	TindogBackgroundWrapper,
 	TindogBio,
 	TindogCardContainer,
 	TindogInfo,
@@ -14,7 +15,9 @@ const TindogCard = (props) => {
 	return (
 		<>
 			<TindogCardContainer>
-				<TindogBackground src={props.avatar} />
+				<TindogBackgroundWrapper>
+					<TindogBackground src={props.avatar} />
+				</TindogBackgroundWrapper>
 				{props.liked && <TindogLiked src={liked} />}
 				{props.noped && <TindogNoped src={noped} />}
 				<TindogCardTextWrapper>

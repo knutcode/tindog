@@ -5,6 +5,8 @@ export const TindogCardContainer = styled.div`
 	padding-inline: 8px;
 `;
 
+export const TindogBackgroundWrapper = styled.div``;
+
 export const TindogBackground = styled.img`
 	width: 100%;
 	height: 75vh;

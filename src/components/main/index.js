@@ -9,26 +9,22 @@ const Main = () => {
 	const [liked, setLiked] = useState(false);
 	const [noped, setNoped] = useState(false);
 
-	const swipedRight = () => {
+	const swiped = (action, bool) => {
 		if (count < dog.length) {
-			setLiked(true);
-			console.log('Like!');
+			action(true);
 			setTimeout(function () {
-				setLiked(false);
+				action(false);
 				getNewDog();
 			}, 2000);
 		}
 	};
 
+	const swipedRight = () => {
+		swiped(setLiked);
+	};
+
 	const swipedLeft = () => {
-		if (count < dog.length) {
-			setNoped(true);
-			console.log('Nope!');
-			setTimeout(function () {
-				setNoped(false);
-				getNewDog();
-			}, 2000);
-		}
+		swiped(setNoped);
 	};
 
 	const getNewDog = () => {
